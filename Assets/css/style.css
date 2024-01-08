@@ -1,0 +1,505 @@
+ /* Styles for body */
+ body {
+    background-image: url("./Assets/Images/body-bg.jpg");
+    background-size: cover;
+    text-align: center;
+    background-repeat: no-repeat;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
+    margin: 0;
+    position: fixed;
+    overflow: scroll;
+    font-family: myfont;
+    cursor: url('./Assets/Images/log03.png'), auto;
+}
+/* style for scrollbar to hide */
+::-webkit-scrollbar {
+    display: none;
+}
+/* Styles for Buttons */
+button {
+    text-decoration: none;
+    background-color: #2d98b9;
+    background-image: linear-gradient(90deg, #2128b7 0%, #1ebc70 100%);
+    color: brown;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 150px;
+}
+
+button:hover {
+    background-color: rgb(194, 94, 210);
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    animation: fiery 0.5s infinite alternate;
+   
+}
+
+.button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.button-overlay h2 {
+    color: white;
+    font-size: 24px;
+}
+/* Animation for Buttons */
+@keyframes fiery {
+    0% {
+        box-shadow: 0 0 5px 0px #bfd70c;
+    }
+
+    50% {
+        box-shadow: 0 0 20px 10px #cda711;
+    }
+
+    100% {
+        box-shadow: 0 0 5px 0px #c53f0f;
+    }
+}
+/* Styles for Headings */
+h1 {
+    background-image: linear-gradient(green, yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 55px;
+    font-family: myfont;
+    animation: fadeIn 2s ease-in-out;
+    
+}
+h3 {
+    background: #2afe00f2;
+    background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
+    background: linear-gradient(to right, #f83600, #fe8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    font-family: myfont;
+    animation: fadeIn 2s ease-in-out;
+}
+/* Styles for links */
+a {
+    text-decoration: none;
+    color: #fff;
+}
+/* Using custom font */
+@font-face {
+    font-family: myfont;
+    src: url("./Assets/Fonts/DragonHunter-9Ynxj.otf");
+}
+/* Style for Music section */
+audio {
+    display: none;
+}
+
+#musicIcon {
+    position: absolute;
+    top: 10px;
+    right: 200px;
+    cursor: pointer;
+    font-size: 24px;
+    color: rgb(254, 255, 253);
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+/* Animation for Heading Text */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Style for Carousel */
+.carousel-container {
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10%;
+}
+
+.carousel-slide {
+    display: none;
+    text-align: center;
+    height: 400px; /* Set a fixed height for the carousel slides */
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;  /* Ensure the image maintains its aspect ratio */
+    height: auto; /* Ensure the image maintains its aspect ratio */
+    object-fit: cover; /* Maintain the aspect ratio and cover the entire container */
+}
+
+/* Add the following styles for fixed width and height */
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain the aspect ratio and cover the entire container */
+}
+
+
+/* CREATING RESPONSIVENESS         */
+@media (300px <= width <=600px){
+    h1 {
+        font-size: 40px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    button {
+        width: 150px;
+    }
+    body {
+    background-image: url("./Assets/Images/body-bg.jpg");
+    background-size: cover;
+    text-align: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: auto;
+    margin: 0;
+    position: relative;
+    overflow: scroll;
+    font-family:myfont;
+    }
+}
+      /* Styles for Navbar */
+nav {
+    /* background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 42%, rgba(0, 212, 255, 1) 100%); */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a,
+.dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent; /* Add border-bottom property */
+}
+
+.navbar li a:hover,
+.dropbtn:hover {
+    border-bottom: 2px solid #9ab31d; 
+    background-color: transparent; 
+}
+
+nav.scrolled {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 42%, rgba(0, 212, 255, 1) 100%);
+}
+
+/* .dropdown:hover {
+    background-color: #1ebc70;
+} */
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    /* background-color: #1e546f; */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.logo {
+    max-width: 100px;
+}
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+    }
+
+    .navbar.show {
+        display: flex;
+    }
+
+    .navbar li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+/* Social Media Icons Styles */
+.social-icons {
+   display: flex;
+   list-style: none;
+   margin-left: 550px;
+   padding: 0;
+}
+
+.social-icons li {
+   position: relative;
+   display: block;
+   color: #666;
+   font-size: 30px;
+   height: 60px;
+   width: 60px;
+   background: #171515;
+   line-height: 60px;
+   border-radius: 50%;
+   margin: 0 15px;
+   cursor: pointer;
+   transition: .5s;
+}
+.social-icons li:before {
+   position: absolute;
+   content: '';
+   top: 0;
+   left: 0;
+   height: inherit;
+   width: inherit;
+   border-radius: 50%;
+   transform: scale(.9);
+   z-index: -1;
+   transition: .5s;
+}
+.social-icons li:nth-child(1):before {
+   background: #4267B2;
+   color: #1DA1F2;
+}
+.social-icons li:nth-child(2):before {
+   background: #1DA1F2;
+}
+.social-icons li:nth-child(3):before {
+   background: #E1306C;
+}
+.social-icons li:nth-child(4):before {
+   background: #2867B2;
+}
+.social-icons li:nth-child(5):before {
+   background: #ff0000;
+}
+.social-icons li:hover:before {
+   filter: blur(3px);
+   transform: scale(1.2);
+}
+.social-icons li:hover {
+   color: #1d496b;
+}
+.social-icons li a {
+   text-decoration: none;
+   color: inherit;
+   display: block;
+   height: 100%;
+   width: 100%;
+}
+@media screen and (max-width: 768px) {
+/* Updated Social Media Icons Styles for Mobile */
+.social-icons {
+    justify-content: center;
+}
+.social-icons li {
+    margin: 0 8px;
+}
+}
+/* Style for language selector */
+.goog-te-banner-frame.skiptranslate {
+display: block !important;
+}
+
+body {
+   position: relative;
+}
+#google_translate_element {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     z-index: 9999;
+}
+/* CSS for the carousel arrows */
+.arrow {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 38%;
+    transform: translateY(-50%);
+    color: #599d24;
+    z-index: 2;
+}
+
+.arrow-left {
+    left: 280px;
+}
+
+.arrow-right {
+    right: 280px;
+}
+
+/* CSS for responsive cards */
+@media screen and (max-width: 768px) {
+    #cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%; /* Adjust the width as needed */
+        }
+}
+
+.logo {
+      max-width: 100px; 
+      margin-right: 20px;
+}
+
+#cards {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap;
+    margin-top: 20px; 
+}
+
+.card {
+    min-width: 200px;
+    height: 200px;
+    flex: 0 0 auto; 
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    margin: 10px; /* Adjust spacing between cards */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease; /* Add transition for smooth effect */
+}
+
+.card:hover {
+    opacity: 0.7;
+    background-color: #2d98b9;
+    transform: scale(1.1); /* Zoom in effect on hover */
+}
+
+.card-content {
+    text-align: center;
+    color: white;
+}
+
+.card-content i {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.card-content h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.card-content a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.card-content a i {
+    margin-right: 5px;
+}
+.card-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}        
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; 
+}
+footer {
+    background-color:rgb(54, 21, 110);
+    width: 100%; 
+    padding: 20px; 
+}
